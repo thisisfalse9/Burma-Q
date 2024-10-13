@@ -16,7 +16,9 @@ To use the SDK, install the following packages:
 
 ### Installation
 ```bash
-pip install openai cirq qiskit pennylane pyquil 
+pip install openai cirq qiskit pennylane pyquil
+
+### Python Code
 
 ```python
 import cirq
