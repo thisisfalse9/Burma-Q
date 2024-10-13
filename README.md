@@ -18,10 +18,11 @@ To use the SDK, install the following packages:
 ```bash
 pip install openai cirq qiskit pennylane pyquil 
 
-## Quick Start
+Quick Start
+Import the necessary libraries and set your OpenAI API key:
 
-
-```python
+python
+Copy code
 import openai
 import cirq
 import qiskit
@@ -30,16 +31,12 @@ from pyquil import Program
 
 # Set your OpenAI API key
 openai.api_key = "<YOUR_OPENAI_API_KEY>"
+Translation and Execution
+The following functions will help you translate quantum instructions in the Myanmar language into quantum code and execute it.
 
-## Translation and Execution
-
-The following functions will help you translate quantum instructions in Myanmar language into quantum code and execute it.
-
----
-
-### Function to Translate Myanmar Instruction to Quantum Code
-
-```python
+python
+Copy code
+# Translate Myanmar instruction to quantum code
 def translate_myanmar_to_code(myanmar_instruction):
     response = openai.Completion.create(
         engine="text-davinci-003",
@@ -52,4 +49,48 @@ def translate_myanmar_to_code(myanmar_instruction):
     code = response.choices[0].text.strip()
     return code
 
+# Execute the quantum code without showing the code itself
+def execute_quantum_code_without_showing(code):
+    try:
+        exec_globals = {}
+        exec_locals = {}
+        exec(code, exec_globals, exec_locals)
+        
+        result = exec_locals.get('result', 'Output not available')
+        return str(result)
+    except Exception as e:
+        return f"Error in execution: {str(e)}"
+Sample Instructions
+Here are some sample quantum instructions in Myanmar language and how to use the SDK to process them:
+
+CNOT Gate Operation
+
+Instruction in Myanmar:
+
+"CNOT gate ကို အသုံးပြု၍ Qubit နှစ်ခုမှာ Quantum Gate operation တစ်ခု ဖန်တီးပါ။"
+
+Python Code Translation:
+
+python
+Copy code
+myanmar_instruction = "CNOT gate ကို အသုံးပြု၍ Qubit နှစ်ခုမှာ Quantum Gate operation တစ်ခု ဖန်တီးပါ။"
+code = translate_myanmar_to_code(myanmar_instruction)
+print("Translated Code:", code)
+result = execute_quantum_code_without_showing(code)
+print("Execution Result:", result)
+Hadamard Gate Superposition
+
+Instruction in Myanmar:
+
+"Hadamard Gate ကို အသုံးပြု၍ Qubit တစ်ခုကို Superposition များအဖြစ် ဖန်တီးပါ။"
+
+Python Code Translation:
+
+python
+Copy code
+myanmar_instruction = "Hadamard Gate ကို အသုံးပြု၍ Qubit တစ်ခုကို Superposition များအဖြစ် ဖန်တီးပါ။"
+code = translate_myanmar_to_code(myanmar_instruction)
+print("Translated Code:", code)
+result = execute_quantum_code_without_showing(code)
+print("Execution Result:", result)
 
