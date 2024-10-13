@@ -15,41 +15,6 @@ To use the SDK, install the following packages:
 - `pyquil`
 
 
-
-```python
-import cirq
-import qiskit
-import pennylane as qml
-from pyquil import Program
-
-# Set your OpenAI API key
-openai.api_key = ""  
-
-# Function to translate Myanmar instruction to quantum code
-def translate_myanmar_to_code(myanmar_instruction):
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=f"Translate the following instruction in Myanmar language to a Quantum Computing code snippet (Cirq, Qiskit, etc.): {myanmar_instruction}",
-        max_tokens=300,
-        temperature=0.5,
-        n=1,
-        stop=None,
-    )
-    code = response.choices[0].text.strip()
-    return code
-
-# Function to execute quantum code without showing it
-def execute_quantum_code_without_showing(code):
-    try:
-        exec_globals = {}
-        exec_locals = {}
-        exec(code, exec_globals, exec_locals)
-        
-        result = exec_locals.get('result', 'Output not available')
-        return str(result)
-    except Exception as e:
-        return f"Error in execution: {str(e)}"
-
 ## Sample Instructions
 
 1. **CNOT Gate Operation**  
