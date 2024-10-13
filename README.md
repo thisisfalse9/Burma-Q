@@ -18,25 +18,16 @@ To use the SDK, install the following packages:
 ```bash
 pip install openai cirq qiskit pennylane pyquil 
 
-### Quick Start
-Import the necessary libraries and set your OpenAI API key:
-
-python
-Copy code
-import openai
+```python
 import cirq
 import qiskit
 import pennylane as qml
 from pyquil import Program
 
 # Set your OpenAI API key
-openai.api_key = "<YOUR_OPENAI_API_KEY>"
-Translation and Execution
-The following functions will help you translate quantum instructions in the Myanmar language into quantum code and execute it.
+openai.api_key = ""  
 
-python
-Copy code
-# Translate Myanmar instruction to quantum code
+# Function to translate Myanmar instruction to quantum code
 def translate_myanmar_to_code(myanmar_instruction):
     response = openai.Completion.create(
         engine="text-davinci-003",
@@ -49,7 +40,7 @@ def translate_myanmar_to_code(myanmar_instruction):
     code = response.choices[0].text.strip()
     return code
 
-# Execute the quantum code without showing the code itself
+# Function to execute quantum code without showing it
 def execute_quantum_code_without_showing(code):
     try:
         exec_globals = {}
@@ -60,25 +51,4 @@ def execute_quantum_code_without_showing(code):
         return str(result)
     except Exception as e:
         return f"Error in execution: {str(e)}"
-Sample Instructions
-Here are some sample quantum instructions in Myanmar language and how to use the SDK to process them:
-
-CNOT Gate Operation
-
-Instruction in Myanmar:
-
-"CNOT gate ကို အသုံးပြု၍ Qubit နှစ်ခုမှာ Quantum Gate operation တစ်ခု ဖန်တီးပါ။"
-
-Python Code Translation:
-
-## Sample Instructions
-
-1. **CNOT Gate Operation**  
-   > "CNOT gate ကို အသုံးပြု၍ Qubit နှစ်ခုမှာ Quantum Gate operation တစ်ခု ဖန်တီးပါ။"
-
-2. **Hadamard Gate Superposition**  
-   > "Hadamard Gate ကို အသုံးပြု၍ Qubit တစ်ခုကို Superposition များအဖြစ် ဖန်တီးပါ။"
-
-result = execute_quantum_code_without_showing(code)
-print("Execution Result:", result)
 
