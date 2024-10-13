@@ -14,12 +14,7 @@ To use the SDK, install the following packages:
 - `pennylane`
 - `pyquil`
 
-### Installation
-```bash
-pip install openai cirq qiskit pennylane pyquil
 
-
-### Python Code
 
 ```python
 import cirq
@@ -54,4 +49,13 @@ def execute_quantum_code_without_showing(code):
         return str(result)
     except Exception as e:
         return f"Error in execution: {str(e)}"
+
+## Sample Instructions
+
+1. **CNOT Gate Operation**  
+   > "CNOT gate ကို အသုံးပြု၍ Qubit နှစ်ခုမှာ Quantum Gate operation တစ်ခု ဖန်တီးပါ။"
+
+2. **Hadamard Gate Superposition**  
+   > "Hadamard Gate ကို အသုံးပြု၍ Qubit တစ်ခုကို Superposition များအဖြစ် ဖန်တီးပါ။"
+
 
