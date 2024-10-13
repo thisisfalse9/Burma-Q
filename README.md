@@ -18,7 +18,7 @@ To use the SDK, install the following packages:
 ```bash
 pip install openai cirq qiskit pennylane pyquil 
 
-Quick Start
+### Quick Start
 Import the necessary libraries and set your OpenAI API key:
 
 python
@@ -71,26 +71,14 @@ Instruction in Myanmar:
 
 Python Code Translation:
 
-python
-Copy code
-myanmar_instruction = "CNOT gate ကို အသုံးပြု၍ Qubit နှစ်ခုမှာ Quantum Gate operation တစ်ခု ဖန်တီးပါ။"
-code = translate_myanmar_to_code(myanmar_instruction)
-print("Translated Code:", code)
-result = execute_quantum_code_without_showing(code)
-print("Execution Result:", result)
-Hadamard Gate Superposition
+## Sample Instructions
 
-Instruction in Myanmar:
+1. **CNOT Gate Operation**  
+   > "CNOT gate ကို အသုံးပြု၍ Qubit နှစ်ခုမှာ Quantum Gate operation တစ်ခု ဖန်တီးပါ။"
 
-"Hadamard Gate ကို အသုံးပြု၍ Qubit တစ်ခုကို Superposition များအဖြစ် ဖန်တီးပါ။"
+2. **Hadamard Gate Superposition**  
+   > "Hadamard Gate ကို အသုံးပြု၍ Qubit တစ်ခုကို Superposition များအဖြစ် ဖန်တီးပါ။"
 
-Python Code Translation:
-
-python
-Copy code
-myanmar_instruction = "Hadamard Gate ကို အသုံးပြု၍ Qubit တစ်ခုကို Superposition များအဖြစ် ဖန်တီးပါ။"
-code = translate_myanmar_to_code(myanmar_instruction)
-print("Translated Code:", code)
 result = execute_quantum_code_without_showing(code)
 print("Execution Result:", result)
 
